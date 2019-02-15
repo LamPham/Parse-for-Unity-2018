@@ -1,7 +1,7 @@
 # Parse-for-Unity-2018
 Future proof native implementation of Parse for Unity without using a DLL
 
-Tested with Unity 2018.2.19f1
+Tested with Unity 2018.3.4f1
 
 Usage:
 
