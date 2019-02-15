@@ -2,6 +2,7 @@
 [Tt]emp/
 [Oo]bj/
 [Tt]est_[Dd]ata/
+Logs/
 
 # Generated Build Process for Unity3D => iOS
 build.log
