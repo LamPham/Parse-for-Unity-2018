@@ -205,11 +205,9 @@ namespace Parse.Internal
         /// </summary>
         private static UnityWebRequestAsyncOperation GenerateWWWInstance(string uri, byte[] bytes, Hashtable headerTable)
         {
-            var webRequest = new UnityWebRequest(uri, bytes != null ? "POST" : "GET");
             UploadHandler uploadHandler = new UploadHandlerRaw(bytes);
             uploadHandler.contentType = "application/x-www-form-urlencoded";
-            webRequest.uploadHandler = uploadHandler;
-            webRequest.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            var webRequest = new UnityWebRequest(uri, bytes != null ? "POST" : "GET", new DownloadHandlerBuffer(), uploadHandler);
             foreach (DictionaryEntry pair in headerTable)
                 webRequest.SetRequestHeader(pair.Key as string, pair.Value as string);
             return webRequest.SendWebRequest();
